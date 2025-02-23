@@ -45,7 +45,7 @@ public class DeadLetterExample {
          ConnectionFactory cf = (ConnectionFactory) initialContext.lookup("ConnectionFactory");
 
          // Step 4.Create a JMS Connection
-         connection = cf.createConnection();
+         connection = cf.createConnection("admin","admin");
 
          // Step 5. Create a * transacted* JMS Session
          Session session = connection.createSession(true, 0);

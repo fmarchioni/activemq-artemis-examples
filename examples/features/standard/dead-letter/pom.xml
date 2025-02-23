@@ -65,7 +65,7 @@ under the License.
                      <goal>cli</goal>
                   </goals>
                   <configuration>
-                     <ignore>${noServer}</ignore>
+                     <ignore>true</ignore>
                      <spawn>true</spawn>
                      <testURI>tcp://localhost:61616</testURI>
                      <args>
@@ -88,7 +88,7 @@ under the License.
                      <goal>stop</goal>
                   </goals>
                   <configuration>
-                     <ignore>${noServer}</ignore>
+                     <ignore>true</ignore>
                   </configuration>
                </execution>
             </executions>

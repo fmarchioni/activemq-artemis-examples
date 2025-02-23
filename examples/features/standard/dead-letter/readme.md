@@ -32,3 +32,26 @@ This configuration will moved dead letter messages from `exampleQueue` to the `d
 ActiveMQ Artemis allows to specify either an address or a queue. In this example, we will use a queue to hold the dead letter messages.
 
 The maximum attempts of delivery is `3`. Once this figure is reached, a message is considered a dead letter message and is moved to the `deadLetterQueue`.
+
+
+
+# Operations:
+
+# RetryMessages
+
+# MoveMessages (null,exampleQueue)
+
+Filters: https://activemq.apache.org/components/artemis/documentation/latest/filter-expressions.html
+JMSMessageID="112"
+AMQTimestamp > 1700739296000
+
+      String filterString = SelectorTranslator.parse(selectorString, "JMSDeliveryMode", "AMQDurable");
+      filterString = SelectorTranslator.parse(filterString, "'PERSISTENT'", "'DURABLE'");
+      filterString = SelectorTranslator.parse(filterString, "'NON_PERSISTENT'", "'NON_DURABLE'");
+      filterString = SelectorTranslator.parse(filterString, "JMSPriority", "AMQPriority");
+      filterString = SelectorTranslator.parse(filterString, "JMSTimestamp", "AMQTimestamp");
+      filterString = SelectorTranslator.parse(filterString, "JMSMessageID", "AMQUserID");
+      filterString = SelectorTranslator.parse(filterString, "JMSExpiration", "AMQExpiration");
+      filterString = SelectorTranslator.parse(filterString, "JMSXGroupID", "AMQGroupID");
+
+
